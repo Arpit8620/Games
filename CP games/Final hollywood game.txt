@@ -1,0 +1,179 @@
+import java.util.*;
+import java.util.Random;
+public class man
+{
+    public static void main(String[] args)
+    {
+        Scanner sc= new Scanner(System.in);
+        Random rand = new Random();
+        int ran1;
+        String movie = "Letsgo";
+        int x=0,y=0,r=1,w=0;
+ //       System.out.println("Please Enter the movie");
+        char[] fd = new char[100];
+        fd[0]='B';
+        fd[1]='O';
+        fd[2]='L';
+        fd[3]='L';
+        fd[4]='Y';
+        fd[5]='W';
+        fd[6]='O';
+        fd[7]='O';
+        fd[8]='D';
+        char[] rmovie = new char[1000];
+        int a=0,b=0,v=0,d=0;
+        int ac;
+        char guess;
+        int ran;
+        while(x!=1)
+        {
+        fd[0]='B';
+        fd[1]='O';
+        fd[2]='L';
+        fd[3]='L';
+        fd[4]='Y';
+        fd[5]='W';
+        fd[6]='O';
+        fd[7]='O';
+        fd[8]='D';
+            ran=rand.nextInt(10);
+            switch(ran)
+            {
+                case 0:{
+                    movie="Parasite";
+                    break;
+                }
+                case 1:{
+                    movie="Departed";
+                    break;
+                }
+                case 2:{
+                    movie="The Shape of Water";
+                    break;
+                }
+                case 3:{
+                    movie="Her";
+                    break;
+                }
+                case 4:{
+                    movie="Forrest Gump";
+                    break;
+                }
+                case 5:{
+                    movie="One piece";
+                    break;
+                }
+                case 6:{
+                    movie="Inception";
+                    break;
+                }
+                case 7:{
+                    movie="Martian";
+                    break;
+                }
+                case 8:{
+                    movie="Interstellar";
+                    break;
+                }
+                case 9:{
+                    movie="Ice Age";
+                    break;
+                }
+            }
+            movie=movie.toUpperCase();
+            System.out.println(movie);
+        for(int j=0;j<1000;j++)
+        {
+            rmovie[j]='*';
+        }
+        for(int i=0;i<movie.length();i++)
+        {
+            if((movie.charAt(i)=='A')||(movie.charAt(i)=='E')||(movie.charAt(i)=='I')||(movie.charAt(i)=='O')||(movie.charAt(i)=='U')||(movie.charAt(i)==' '))
+            {
+                rmovie[i]=movie.charAt(i);
+            }
+            else
+            {
+                rmovie[i]='_';
+                a++;
+            }
+        }
+        for(int i=0;i<movie.length();i++)
+        {
+                System.out.printf("%c ",rmovie[i]);
+        }
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println();
+        System.out.println("BOLLYWOOD");
+        System.out.println("RULES : IF THE PLAYER ENTERS THE WRONG CHARACTER AT A TIME THEN EACH TIME A CHARACTER WILL BE DELETED FROM THE WORLD BOLLYWOOD");
+        v=0;
+        while(b<a)
+        {
+        while((movie.charAt(v)=='A')||(movie.charAt(v)=='E')||(movie.charAt(v)=='I')||(movie.charAt(v)=='O')||(movie.charAt(v)=='U'))
+        {
+                v++;
+        }
+        guess='0';
+        guess=sc.next().charAt(0);
+        guess=Character.toUpperCase(guess);
+        if((movie.charAt(v)==guess)&&(rmovie[v]=='_'))
+        {
+             rmovie[v]=(char)guess;
+             v++;
+             b++;
+        }
+        else
+         {
+             System.out.println("SORRY ,YOU HAVE GUESSED THE WRONG CHARACTER.SO AS PER THE RULES A CHARACTER WILL BE DELETED FROM THE WORD BOLLYWOOD ");
+             System.out.println();
+             for(int k=0;k<=w;k++)
+             {
+                 if(k==w)
+                 {
+                     fd[k]='*';
+                 }
+             }
+             for(int k=0;k<9;k++)
+             {
+                 System.out.printf("%c",fd[k]);
+             }
+            System.out.println();
+            System.out.println();
+             w++;
+         }
+         if(w>=9)
+         {
+             b=a+5;
+         }
+        for(int i=0;i<movie.length();i++)
+        {
+                System.out.printf("%c ",rmovie[i]);
+        }
+        System.out.println();
+        System.out.println();
+        }
+        if(b==a)
+        {
+            System.out.println("WELL PLAYED YOU HAVE WON THE GAME");
+        }
+        else
+        {
+            System.out.println("YOU HAVE LOST AS YOU HAVE MISSED THE CHANCES");
+        }
+        for(int i=0;i<movie.length();i++)
+        {
+                System.out.printf("%c ",rmovie[i]);
+        }
+        System.out.println();
+        System.out.println("IF YOU WANT TO PLAY THE GAME AGAIN PRESS 0 ELSE 1");
+        System.out.println();
+        x=sc.nextInt();
+        }
+        System.out.println();
+        System.out.println("THANKS FOR PLAYING");
+        System.out.println();
+
+    }
+}
